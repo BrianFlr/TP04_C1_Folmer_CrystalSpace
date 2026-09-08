@@ -33,10 +33,7 @@ public class ChangeColor : MonoBehaviour
         {
             GetPlayerColorsValues("Player2Color");
         }
-    }
 
-    private void FixedUpdate()
-    {
         // Cambio el color del player
         spriteRenderer.color = new Color(newColor, defaultColor, Random.value);
     }

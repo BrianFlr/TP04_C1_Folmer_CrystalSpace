@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     // Creo un enum para diferenciar jugadores desde el editor
     enum PlayerId
@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float currentSpeed = 5.0f;
     [SerializeField] private KeyCode moveUp = KeyCode.W;
     [SerializeField] private KeyCode moveDown = KeyCode.S;
+    [SerializeField] private KeyCode moveRight = KeyCode.D;
+    [SerializeField] private KeyCode moveLeft = KeyCode.A;
 
     private Rigidbody2D rb;
 
@@ -45,6 +47,16 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(moveDown))
         {
             rb.position += new Vector2(0, -currentSpeed * Time.fixedDeltaTime);
+        }
+
+        if (Input.GetKey(moveRight))
+        {
+            rb.position += new Vector2(currentSpeed * Time.fixedDeltaTime, 0);
+        }
+
+        if (Input.GetKey(moveLeft))
+        {
+            rb.position += new Vector2(-currentSpeed * Time.fixedDeltaTime, 0);
         }
     }
 
