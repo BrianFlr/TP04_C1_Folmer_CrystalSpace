@@ -26,15 +26,12 @@ public class UiPauseMenu : MonoBehaviour
 
     private void Start()
     {
-        // Consulto si se encuentra activo el script de la escena que se pausa para evitar el error "null reference"
-        if (UiPauseManager.instance != null)
+        // Consulto si el juego se encuentra en pausa.
+        if (PauseManager.Instance.GetPauseState() == true)
         {
-            if (UiPauseManager.instance.isPause) // Si el juego se encuentra en pausa
-            {
-                // Desactivo el panel de Main Menu y activo el de Pausa
-                mainMenuCanvas.SetActive(false);
-                pauseCanvas.SetActive(true);
-            }
+            // Desactivo el panel de Main Menu y activo el de Pausa al momento de activar la escena 
+            mainMenuCanvas.SetActive(false);
+            pauseCanvas.SetActive(true);
         }
     }
 
@@ -49,10 +46,10 @@ public class UiPauseMenu : MonoBehaviour
     // Eventos de botones
     private void OnContinueClicked()
     {
-        // Vuelvo el estado de pausa a false
-        UiPauseManager.instance.isPause = false;
+        // Quito el estado de pausa
+        PauseManager.Instance.SetPauseState(false);
 
-        // Reanudo el tiempo del juego
+        // Seteo el tiempo en 1 para reanudar el juego
         Time.timeScale = 1;
 
         // Apago la escena de "MainMenu" para volver a la del juego
@@ -75,10 +72,13 @@ public class UiPauseMenu : MonoBehaviour
 
     private void OnExitClicked()
     {
+        // Quito el estado de pausa
+        PauseManager.Instance.SetPauseState(false);
+
         // Reanudo el tiempo del juego
         Time.timeScale = 1;
 
         // Cargo la escena "MainMenu" de forma individual, cerrando las demás activas
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu");
     }
 }

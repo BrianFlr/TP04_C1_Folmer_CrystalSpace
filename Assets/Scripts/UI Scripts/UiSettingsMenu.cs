@@ -17,6 +17,18 @@ public class UiSettingsMenu : MonoBehaviour
         btnBack.onClick.AddListener(OnBackClicked);
     }
 
+    private void Update()
+    {
+        if (settingsCanvas.activeSelf)
+        {
+            PauseManager.Instance.isSettings = true;
+        }
+        else
+        {
+            PauseManager.Instance.isSettings = false;
+        }
+    }
+
     private void OnDestroy()
     {
         btnBack.onClick.RemoveAllListeners();
@@ -27,18 +39,15 @@ public class UiSettingsMenu : MonoBehaviour
     {
         settingsCanvas.SetActive(false);
 
-        // Consulto si se encuentra activo el script de la escena que se pausa
-        if (UiPauseManager.instance != null)
+        // Consulto si se encuentra en pausa.
+        if (PauseManager.Instance.GetPauseState() == true)
         {
-            if (UiPauseManager.instance.isPause) // Si el juego se encuentra en pausa
-            {
-                // Activo el panel de Pausa
-                pauseCanvas.SetActive(true);
-            }
+            // Activo el panel de Pausa.
+            pauseCanvas.SetActive(true);
         }
-        else // Si no se encuentra activo, significa que no está en pausa
+        else
         {
-            // Activo el panel de MainMenu
+            // Activo el panel de MainMenu.
             mainMenuCanvas.SetActive(true);
         }
     }

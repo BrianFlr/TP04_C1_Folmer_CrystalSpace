@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +24,18 @@ public class UiMainMenu : MonoBehaviour
         btnExit.onClick.AddListener(OnExitClicked);
     }
 
+    private void Update()
+    {
+        if (mainMenuCanvas.activeSelf)
+        {
+            PauseManager.Instance.isMainMenu = true;
+        }
+        else
+        {
+            PauseManager.Instance.isMainMenu = false;
+        }
+    }
+
     private void OnDestroy()
     {
         btnStart.onClick.RemoveAllListeners();
@@ -34,6 +47,7 @@ public class UiMainMenu : MonoBehaviour
     // Eventos de botones
     private void OnStartClicked()
     {
+        // Cargo la escena de juego
         SceneManager.LoadScene("Gameplay");
     }
 
@@ -51,6 +65,10 @@ public class UiMainMenu : MonoBehaviour
 
     private void OnExitClicked()
     {
-        UnityEditor.EditorApplication.isPlaying = false;  
+        #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }

@@ -112,6 +112,8 @@ MonoBehaviour:
   currentSpeed: 5
   moveUp: 119
   moveDown: 115
+  moveRight: 100
+  moveLeft: 97
 --- !u!114 &-73020027597394635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e56a4372efe1294bb1ded474d2b9ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
-  changeColor: 114
+  playerId: 0
+  defaultColor: 0
 --- !u!61 &4188432349518530314
 BoxCollider2D:
   m_ObjectHideFlags: 0
