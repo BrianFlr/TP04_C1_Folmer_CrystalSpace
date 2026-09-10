@@ -9,9 +9,10 @@ public class ChangeLenght : MonoBehaviour
         Player2 = 1
     }
 
+    [SerializeField] private PlayerDataSo data;
+
     [SerializeField] private PlayerId playerId;
-    [SerializeField] private float defaultLenght = 4f;
-    private float newLenght = 0;
+    [SerializeField] private float playerLenght = 4.0f;
 
     private Rigidbody2D rb;
 
@@ -22,6 +23,9 @@ public class ChangeLenght : MonoBehaviour
 
     private void Start()
     {
+        // Cargo los valores default de la altura del jugador
+        playerLenght = data.Lenght;
+
         // Dependiendo la ID de player, carga el largo mediante la clave correspondiente con la que esta fue guardada
         if (playerId == PlayerId.Player1)
         {
@@ -36,12 +40,12 @@ public class ChangeLenght : MonoBehaviour
     private void FixedUpdate()
     {
         // Cambio el largo del player
-        rb.transform.localScale = new Vector3(defaultLenght, newLenght, defaultLenght);
+        rb.transform.localScale = new Vector3(data.Anchor, playerLenght, 0);
     }
 
     // Función para obtener los valores de largo seteados en settings y asignárselo al sprite
     private void GetPlayerLenghtValue(string playerPrefsKey) // La clave con la que guardé el largo es el parámetro a recibir 
     {
-        newLenght = PlayerPrefs.GetFloat(playerPrefsKey, defaultLenght);
+        playerLenght = PlayerPrefs.GetFloat(playerPrefsKey, data.Lenght);
     }
 }

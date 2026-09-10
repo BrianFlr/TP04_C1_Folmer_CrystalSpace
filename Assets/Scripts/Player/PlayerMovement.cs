@@ -1,3 +1,4 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,12 +10,12 @@ public class PlayerMovement : MonoBehaviour
         Player2 = 1
     }
 
+    [SerializeField] private PlayerDataSo data;
+
+    [Header("Player ID")]
     [SerializeField] private PlayerId playerId;
-    [SerializeField] private float currentSpeed = 5.0f;
-    [SerializeField] private KeyCode moveUp = KeyCode.W;
-    [SerializeField] private KeyCode moveDown = KeyCode.S;
-    [SerializeField] private KeyCode moveRight = KeyCode.D;
-    [SerializeField] private KeyCode moveLeft = KeyCode.A;
+    
+    [SerializeField] public float currentSpeed = 5f;
 
     private Rigidbody2D rb;
 
@@ -25,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        // Cargo los el valor default de velocidad del jugador
+        currentSpeed = data.Speed;
+
         // Dependiendo la ID de player, carga la velocidad mediante la clave correspondiente con la que esta fue guardada
         if (playerId == PlayerId.Player1)
         {
@@ -39,22 +43,22 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Movimiento del jugador por posicionamiento
-        if (Input.GetKey(moveUp))
+        if (Input.GetKey(data.moveUp))
         {
             rb.position += new Vector2(0, currentSpeed * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(moveDown))
+        if (Input.GetKey(data.moveDown))
         {
             rb.position += new Vector2(0, -currentSpeed * Time.fixedDeltaTime);
         }
 
-        if (Input.GetKey(moveRight))
+        if (Input.GetKey(data.moveRight))
         {
             rb.position += new Vector2(currentSpeed * Time.fixedDeltaTime, 0);
         }
 
-        if (Input.GetKey(moveLeft))
+        if (Input.GetKey(data.moveLeft))
         {
             rb.position += new Vector2(-currentSpeed * Time.fixedDeltaTime, 0);
         }
@@ -63,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     // Función para obtener los valores de velocidad seteados en settings y asignárselo a la velocidad con la que se va a mover el sprite
     private void GetPlayerSpeedValue(string playerPrefsKey) // La clave con la que guardé la velocidad es el parámetro a recibir 
     {
-        currentSpeed = PlayerPrefs.GetFloat(playerPrefsKey, currentSpeed);
+        currentSpeed = PlayerPrefs.GetFloat(playerPrefsKey, data.Speed);
     }
 
 }

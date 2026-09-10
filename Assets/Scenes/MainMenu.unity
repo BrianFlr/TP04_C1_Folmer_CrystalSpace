@@ -3176,9 +3176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1b52e6a9e014546bf5f021ba0471a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
-  mainMenuCanvas: {fileID: 1719336450}
-  settingsCanvas: {fileID: 782650436}
-  creditsCanvas: {fileID: 1110032612}
+  isMainMenu: 0
+  isSettings: 0
+  isCredits: 0
 --- !u!4 &549873742
 Transform:
   m_ObjectHideFlags: 0
@@ -5221,7 +5221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4828290886582573879, guid: 16a34260931d8ec49841c2045316e700, type: 3}
+  m_Sprite: {fileID: -7793312510398098659, guid: b726ec30f88aaa241801627fc805a2c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
