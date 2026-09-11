@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     private int maxRounds = 5;
     private float maxTimeGoal = 20f;
     private float timerGoal = 0f;
-    public int Player1WinRounds = 0;
-    public int Player2WinRounds = 0;
+
+    private int player1WinPoints = 0;
+    private int player2WinPoints = 0;
+
+    private bool Goal = false;
 
     private void Awake()
     {
@@ -26,36 +29,35 @@ public class GameManager : MonoBehaviour
 
         roundsToWin = data.roundsToWin;
         maxRounds = data.maxRounds;
-        float maxTimeGoal = data.maxTimeGoal + 1;
+        maxTimeGoal = (float)data.maxTimeGoal;
     }
 
     private void Update()
     {
-        // Cuento la cantidad de segundos y lo comparo con el maximo definido
-        if (timerGoal <= maxTimeGoal)
-        {
-            timerGoal += Time.deltaTime;
-        }
-        else
-        {
-            timerGoal = 0;
-        }
-
-        if (Player1WinRounds == data.roundsToWin || Player2WinRounds == data.roundsToWin)
-        {
-
-        }
+        // Contador de segundos para comparar con el maximo definido
+        timerGoal += Time.deltaTime;
     }
 
     // Setters para sumarle puntaje a cada jugador
-    public void SetPlayer1WinRounds()
+    public void SetPlayer1WinPoints()
     {
-        Player1WinRounds++;
+        // Aseguro que sume solo un punto
+        Goal = true;
+        
+        if (Goal)
+        {
+            player1WinPoints++;
+        }
     }
 
-    public void SetPlayer2WinRounds()
+    public void SetPlayer2WinPoints()
     {
-        Player2WinRounds++;
+        Goal = true;
+
+        if (Goal)
+        {
+            player2WinPoints++;
+        }
     }
 
     // Get para saber el tiempo transcurrido
@@ -64,9 +66,26 @@ public class GameManager : MonoBehaviour
         return timerGoal;
     }
 
+    // Reset del contador de tiempo
+    public void ResetTimerGoal()
+    {
+        timerGoal = 0;
+    }
+
     // Get para saber el tiempo maximo para anotar un punto
     public float GetMaxTimeGoal()
     {
         return maxTimeGoal;
+    }
+
+    // Get para saber cuando se anota un punto
+    public bool GetGoalState()
+    {
+        return Goal;
+    }
+
+    public void ResetGoalState()
+    {
+        Goal = false;
     }
 }
