@@ -1,4 +1,3 @@
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -42,25 +41,32 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Movimiento del jugador por posicionamiento
-        if (Input.GetKey(data.moveUp))
+        if (Input.anyKey) 
         {
-            rb.position += new Vector2(0, currentSpeed * Time.fixedDeltaTime);
-        }
+            // Movimiento del jugador
+            if (Input.GetKey(data.moveUp))
+            {
+                rb.linearVelocity = new Vector2(0, 1).normalized * currentSpeed;
+            }
 
-        if (Input.GetKey(data.moveDown))
-        {
-            rb.position += new Vector2(0, -currentSpeed * Time.fixedDeltaTime);
-        }
+            if (Input.GetKey(data.moveDown))
+            {
+                rb.linearVelocity = new Vector2(0, -1) * currentSpeed;
+            }
 
-        if (Input.GetKey(data.moveRight))
-        {
-            rb.position += new Vector2(currentSpeed * Time.fixedDeltaTime, 0);
-        }
+            if (Input.GetKey(data.moveRight))
+            {
+                rb.linearVelocity = new Vector2(1, 0) * currentSpeed;
+            }
 
-        if (Input.GetKey(data.moveLeft))
+            if (Input.GetKey(data.moveLeft))
+            {
+                rb.linearVelocity = new Vector2(-1, 0) * currentSpeed;
+            }
+        }
+        else
         {
-            rb.position += new Vector2(-currentSpeed * Time.fixedDeltaTime, 0);
+            rb.linearVelocity = Vector2.zero;
         }
     }
 

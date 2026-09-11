@@ -25,14 +25,13 @@ public class BallMovement : MonoBehaviour
         if (randomValue == 0)
         {
             // Empujo la pelota hacia la derecha
-            Vector2 initialDirection = new Vector2(initialAngleX, initialAngleY).normalized; // Utilizo normalized para obtener sólo la dirección
-            rbBall.linearVelocity = initialDirection * ballSpeed;
+            rbBall.linearVelocity = new Vector2(initialAngleX, initialAngleY).normalized * ballSpeed;
         }
         else
         {
             // Empujo la pelota hacia la izquierda
-            Vector2 initialDirection = new Vector2(-initialAngleX, -initialAngleY).normalized;
-            rbBall.linearVelocity = initialDirection * ballSpeed;
+            rbBall.linearVelocity = new Vector2(-initialAngleX, -initialAngleY).normalized * ballSpeed;
+            //rbBall.AddForce(rbBall.linearVelocity);
         }
     }
 
