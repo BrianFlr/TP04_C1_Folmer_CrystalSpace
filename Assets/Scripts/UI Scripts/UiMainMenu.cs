@@ -24,18 +24,6 @@ public class UiMainMenu : MonoBehaviour
         btnExit.onClick.AddListener(OnExitClicked);
     }
 
-    private void Update()
-    {
-        if (mainMenuCanvas.activeSelf)
-        {
-            PauseManager.Instance.isMainMenu = true;
-        }
-        else
-        {
-            PauseManager.Instance.isMainMenu = false;
-        }
-    }
-
     private void OnDestroy()
     {
         btnStart.onClick.RemoveAllListeners();

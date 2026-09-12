@@ -8,13 +8,15 @@ public class UiPauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject settingsCanvas;
     [SerializeField] private GameObject creditsCanvas;
-    [SerializeField] private GameObject mainMenuCanvas;
 
     [Header("Buttons")]
     [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnSettings;
     [SerializeField] private Button btnCredits;
     [SerializeField] private Button btnExit;
+
+    // Defino mi variable de pausa
+    private bool isPause = false;
 
     private void Awake()
     {
@@ -24,14 +26,41 @@ public class UiPauseMenu : MonoBehaviour
         btnExit.onClick.AddListener(OnExitClicked);
     }
 
-    private void Start()
+    private void Update()
     {
-        // Consulto si el juego se encuentra en pausa.
-        if (PauseManager.Instance.GetPauseState() == true)
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) // Leo el input de la tecla para pausa
         {
-            // Desactivo el panel de Main Menu y activo el de Pausa al momento de activar la escena 
-            mainMenuCanvas.SetActive(false);
-            pauseCanvas.SetActive(true);
+            if (settingsCanvas.activeSelf || creditsCanvas.activeSelf) // Si esta activo otro menu 
+            {
+                // Primero lo cierra
+                settingsCanvas.SetActive(false);
+                creditsCanvas.SetActive(false);
+
+                // Y vuelve al menu de pausa
+                pauseCanvas.SetActive(true);
+                
+            }
+            else
+            {
+                isPause = !isPause;
+
+                if (isPause)
+                {
+                    // Seteo el tiempo en 0
+                    Time.timeScale = 0;
+
+                    // Activo el menu de pausa
+                    pauseCanvas.SetActive(true);
+                }
+                else
+                {
+                    // Seteo el tiempo en 1 para reanudar el juego
+                    Time.timeScale = 1;
+
+                    // Desactivo el menu de pausa
+                    pauseCanvas.SetActive(false);
+                }
+            }
         }
     }
 
@@ -47,13 +76,11 @@ public class UiPauseMenu : MonoBehaviour
     private void OnContinueClicked()
     {
         // Quito el estado de pausa
-        PauseManager.Instance.SetPauseState(false);
+        ResetPauseState();
 
-        // Seteo el tiempo en 1 para reanudar el juego
-        Time.timeScale = 1;
+        // Desactivo el panel de pausa
+        pauseCanvas.SetActive(false);
 
-        // Apago la escena de "MainMenu" para volver a la del juego
-        SceneManager.UnloadSceneAsync("MainMenu");
     }
 
     private void OnSettingsClicked()
@@ -73,12 +100,18 @@ public class UiPauseMenu : MonoBehaviour
     private void OnExitClicked()
     {
         // Quito el estado de pausa
-        PauseManager.Instance.SetPauseState(false);
+        ResetPauseState();
+
+        // Cargo la escena "MainMenu"
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    // Función que resetea el estado de pausa
+    public void ResetPauseState()
+    {
+        isPause = false;
 
         // Reanudo el tiempo del juego
         Time.timeScale = 1;
-
-        // Cargo la escena "MainMenu" de forma individual, cerrando las demás activas
-        SceneManager.LoadScene("MainMenu");
     }
 }

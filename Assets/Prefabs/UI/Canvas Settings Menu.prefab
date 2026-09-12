@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 5539985727086632467}
   - component: {fileID: 9023363522617889507}
   m_Layer: 5
-  m_Name: Text Player 1 Speed
+  m_Name: Text Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 7074777840955942845}
   - component: {fileID: 5849099235127345835}
   m_Layer: 5
-  m_Name: Text Player 1 Color
+  m_Name: Text Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2475,7 +2475,7 @@ GameObject:
   - component: {fileID: 7795541405543559210}
   - component: {fileID: 6064621510252409196}
   m_Layer: 5
-  m_Name: Text Player 2 Lenght
+  m_Name: Text Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2612,7 +2612,7 @@ GameObject:
   - component: {fileID: 5433376565264278014}
   - component: {fileID: 8906318583601761295}
   m_Layer: 5
-  m_Name: Text Player 2 Speed
+  m_Name: Text Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3033,7 +3033,7 @@ GameObject:
   - component: {fileID: 2694311300828754676}
   - component: {fileID: 8787771365313147781}
   m_Layer: 5
-  m_Name: Text Player 2 Color
+  m_Name: Text Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4460,7 +4460,7 @@ GameObject:
   - component: {fileID: 5799287849045764490}
   - component: {fileID: 5096180917066584080}
   - component: {fileID: 1242607823396506223}
-  - component: {fileID: 6391180084476912442}
+  - component: {fileID: 5257344568310295343}
   - component: {fileID: 2458813256638102399}
   - component: {fileID: 7086105217416351141}
   - component: {fileID: 2039878694006861480}
@@ -4554,7 +4554,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6391180084476912442
+--- !u!114 &5257344568310295343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4563,12 +4563,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5758160564683481350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc79cb87bb20a545b9163eff5b2bde6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5473515694ee13f4cacd5f58badca6f5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UiSettingsMenu
-  settingsCanvas: {fileID: 1769949822816264366}
-  mainMenuCanvas: {fileID: 0}
-  pauseCanvas: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::UiButtonBack
+  activeCanvas: {fileID: 1769949822816264366}
+  returnCanvas: {fileID: 0}
   btnBack: {fileID: 8259269853362924261}
 --- !u!114 &2458813256638102399
 MonoBehaviour:
@@ -4598,10 +4597,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de61ad42e115e2347982d9934505869a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiSettingsSlidersLong
-  sliderPlayer1Lenght: {fileID: 0}
-  sliderPlayer2Lenght: {fileID: 0}
-  textPlayer1Lenght: {fileID: 0}
-  textPlayer2Lenght: {fileID: 0}
+  sliderPlayer1Lenght: {fileID: 1439857634972982397}
+  sliderPlayer2Lenght: {fileID: 5097595296180379315}
+  textPlayer1Lenght: {fileID: 8095423797112781319}
+  textPlayer2Lenght: {fileID: 8935452067729819274}
 --- !u!114 &2039878694006861480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4614,10 +4613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785916a07c0176e4b9329a134f604a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiSettingsSlidersColor
-  sliderPlayer1Color: {fileID: 0}
-  sliderPlayer2Color: {fileID: 0}
-  textPlayer1Color: {fileID: 0}
-  textPlayer2Color: {fileID: 0}
+  sliderPlayer1Color: {fileID: 6514662094124079803}
+  sliderPlayer2Color: {fileID: 7581533347778111433}
+  textPlayer1Color: {fileID: 2371172103900488314}
+  textPlayer2Color: {fileID: 5296784724307053041}
 --- !u!1 &5958462160089432328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6028,7 +6027,7 @@ GameObject:
   - component: {fileID: 8680712380994669620}
   - component: {fileID: 5590479987233140614}
   m_Layer: 5
-  m_Name: Text Player 1 Lenght
+  m_Name: Text Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
