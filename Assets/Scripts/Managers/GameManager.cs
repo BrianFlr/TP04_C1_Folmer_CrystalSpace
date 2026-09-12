@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
         } 
     }
 
-
-
     // Setters para sumarle puntaje a cada jugador
     public void SetPlayer1WinPoints()
     {

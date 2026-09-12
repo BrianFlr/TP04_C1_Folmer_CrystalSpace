@@ -29,7 +29,7 @@ public class UiSettingsSlidersColor : MonoBehaviour
         PlayerPrefs.SetFloat("Player1Color", value);
         PlayerPrefs.Save();
 
-        textPlayer1Color.text = value.ToString("F2");
+        textPlayer1Color.text = value.ToString("0");
     }
     private void OnPlayer2ColorChanged(float value)
     {
@@ -37,6 +37,6 @@ public class UiSettingsSlidersColor : MonoBehaviour
         PlayerPrefs.SetFloat("Player2Color", value);
         PlayerPrefs.Save();
 
-        textPlayer2Color.text = value.ToString("F2");
+        textPlayer2Color.text = value.ToString("0");
     }
 }
