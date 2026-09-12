@@ -42,7 +42,7 @@ public class GoalTriggers : MonoBehaviour
     // Deteccion de las zonas que definen a que jugador sumar un punto al terminar el tiempo maximo disponible para anotar
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (GameManager.Instance.GetTimerGoalValue() >= GameManager.Instance.GetMaxTimeGoal())
+        if (GameManager.Instance.GetTimerGoalValue() <= 0) // Si el contador llego a 0
         {
             if (collision == leftGoalTrigger)
             {

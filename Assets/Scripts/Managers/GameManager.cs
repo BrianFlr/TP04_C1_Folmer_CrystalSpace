@@ -30,12 +30,13 @@ public class GameManager : MonoBehaviour
         roundsToWin = data.roundsToWin;
         maxRounds = data.maxRounds;
         maxTimeGoal = (float)data.maxTimeGoal;
+        timerGoal = (float)data.maxTimeGoal;
     }
 
     private void Update()
     {
-        // Contador de segundos para comparar con el maximo definido
-        timerGoal += Time.deltaTime;
+        // Contador de segundos hacia atras para anotar 
+        timerGoal -= Time.deltaTime;
 
         if (player1Points == roundsToWin || player2Points == roundsToWin)
         {
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Get para saber el tiempo transcurrido
+    // Get para saber el tiempo hacia atras transcurrido
     public float GetTimerGoalValue()
     {
         return timerGoal;
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
     // Reset del contador de tiempo
     public void ResetTimerGoal()
     {
-        timerGoal = 0;
+        timerGoal = maxTimeGoal;
     }
 
     // Get para saber el tiempo maximo para anotar un punto
