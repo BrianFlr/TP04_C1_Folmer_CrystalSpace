@@ -16,7 +16,7 @@ public class GoalTriggers : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(GameManager.Instance.GetTimerGoalValue());
+        //Debug.Log(GameManager.Instance.GetTimerGoalValue());
     }
 
     // Deteccion de la zona de gol de los jugadores

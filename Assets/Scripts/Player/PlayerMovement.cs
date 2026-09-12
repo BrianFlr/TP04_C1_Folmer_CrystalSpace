@@ -41,33 +41,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.anyKey) 
+        Vector2 direction = Vector2.zero;
+
+        // Movimiento del jugador
+        if (Input.GetKey(data.moveUp))
         {
-            // Movimiento del jugador
-            if (Input.GetKey(data.moveUp))
-            {
-                rb.linearVelocity = new Vector2(0, 1).normalized * currentSpeed;
-            }
-
-            if (Input.GetKey(data.moveDown))
-            {
-                rb.linearVelocity = new Vector2(0, -1) * currentSpeed;
-            }
-
-            if (Input.GetKey(data.moveRight))
-            {
-                rb.linearVelocity = new Vector2(1, 0) * currentSpeed;
-            }
-
-            if (Input.GetKey(data.moveLeft))
-            {
-                rb.linearVelocity = new Vector2(-1, 0) * currentSpeed;
-            }
+            direction += new Vector2(0, 1);
         }
-        else
+
+        if (Input.GetKey(data.moveDown))
         {
-            rb.linearVelocity = Vector2.zero;
+            direction += new Vector2(0, -1);
         }
+
+        if (Input.GetKey(data.moveRight))
+        {
+            direction += new Vector2(1, 0);
+        }
+
+        if (Input.GetKey(data.moveLeft))
+        {
+            direction += new Vector2(-1, 0);
+        }
+        
+        rb.linearVelocity = direction.normalized * currentSpeed;
     }
 
     // Función para obtener los valores de velocidad seteados en settings y asignárselo a la velocidad con la que se va a mover el sprite

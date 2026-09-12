@@ -20,3 +20,5 @@ MonoBehaviour:
   Lenght: 4
   Anchor: 4
   color: {r: 1, g: 1, b: 1, a: 1}
+  colorSince: {r: 0, g: 0.04617977, b: 1, a: 1}
+  colorTo: {r: 1, g: 1, b: 1, a: 1}

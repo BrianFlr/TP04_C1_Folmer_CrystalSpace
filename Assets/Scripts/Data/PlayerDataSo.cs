@@ -17,4 +17,6 @@ public class PlayerDataSo : ScriptableObject
 
     [Header("Color")]
     public Color color = Color.white;
+    public Color colorSince = Color.green;
+    public Color colorTo = Color.green;
 }
