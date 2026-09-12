@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     private float maxTimeGoal = 20f;
     private float timerGoal = 0f;
 
-    private int player1WinPoints = 0;
-    private int player2WinPoints = 0;
+    private int player1Points = 0;
+    private int player2Points = 0;
 
     private bool Goal = false;
 
@@ -36,7 +36,14 @@ public class GameManager : MonoBehaviour
     {
         // Contador de segundos para comparar con el maximo definido
         timerGoal += Time.deltaTime;
+
+        if (player1Points == roundsToWin || player2Points == roundsToWin)
+        {
+
+        } 
     }
+
+
 
     // Setters para sumarle puntaje a cada jugador
     public void SetPlayer1WinPoints()
@@ -46,7 +53,7 @@ public class GameManager : MonoBehaviour
         
         if (Goal)
         {
-            player1WinPoints++;
+            player1Points++;
         }
     }
 
@@ -56,7 +63,7 @@ public class GameManager : MonoBehaviour
 
         if (Goal)
         {
-            player2WinPoints++;
+            player2Points++;
         }
     }
 
@@ -84,8 +91,20 @@ public class GameManager : MonoBehaviour
         return Goal;
     }
 
+    // Reset del valor de la variable que me indica cuando se suma un punto
     public void ResetGoalState()
     {
         Goal = false;
+    }
+
+    // Get de los puntos de cada jugador
+    public int GetPlayer1Points()
+    {
+        return player1Points;
+    }
+
+    public int GetPlayer2Points()
+    {
+        return player2Points;
     }
 }

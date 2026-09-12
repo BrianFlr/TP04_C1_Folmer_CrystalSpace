@@ -11,8 +11,5 @@ public class GameSceneManager : MonoBehaviour
             SceneManager.LoadScene("Gameplay");
             GameManager.Instance.ResetGoalState();
         }
-
-
-
     }
 }
