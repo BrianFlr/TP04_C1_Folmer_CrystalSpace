@@ -3,8 +3,8 @@ guid: 2a3360378a6a0254f953fbcce7bca2da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7521337307919899434
-    second: Dot_01_0
+      213: -3230280421928984636
+    second: Dot Slider_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dot_01_0
+      name: Dot Slider_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 71
-        height: 71
+        width: 130
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2b557a8e68216860800000000000000
-      internalID: 7521337307919899434
+      spriteID: 4cf160e221dbb23d0800000000000000
+      internalID: -3230280421928984636
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dot_01_0: 7521337307919899434
+      Dot Slider_0: -3230280421928984636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
