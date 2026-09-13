@@ -16,7 +16,7 @@ public partial class GameManager : MonoBehaviour
 
     private bool goal = false;
 
-    // Creo mi variable tipo enum para asignarle el estado de victoria
+    // Creo mi variable tipo enum para asignarle el estado de victoria o empate
     private WinTieCondition winTieCondition = WinTieCondition.None;
 
     private void Awake()
@@ -127,8 +127,22 @@ public partial class GameManager : MonoBehaviour
         return player2Points;
     }
 
+    // Reset de los puntos de cada jugador
+    public void ResetPlayersPoints()
+    {
+        player1Points = 0;
+        player2Points = 0;
+    }
+
+    // Get para saber el valor del enum que tiene la variable del mismo tipo
     public WinTieCondition GetWinTieCondition()
     {
         return winTieCondition;
+    }
+    
+    // Reset de la variable para poder reiniciar el juego
+    public void ResetWinTieCondition()
+    {
+        winTieCondition = WinTieCondition.None;
     }
 }
