@@ -24,7 +24,7 @@ public class ChangeLenght : MonoBehaviour
     private void Start()
     {
         // Cargo los valores default de la altura del jugador
-        playerLenght = data.Lenght;
+        playerLenght = data.lenght;
 
         // Dependiendo la ID de player, carga el largo mediante la clave correspondiente con la que esta fue guardada
         if (playerId == PlayerId.Player1)
@@ -40,12 +40,12 @@ public class ChangeLenght : MonoBehaviour
     private void FixedUpdate()
     {
         // Cambio el largo del player
-        rb.transform.localScale = new Vector3(data.Anchor, playerLenght, 0);
+        rb.transform.localScale = new Vector3(data.anchor, playerLenght, 0);
     }
 
     // Función para obtener los valores de largo seteados en settings y asignárselo al sprite
     private void GetPlayerLenghtValue(string playerPrefsKey) // La clave con la que guardé el largo es el parámetro a recibir 
     {
-        playerLenght = PlayerPrefs.GetFloat(playerPrefsKey, data.Lenght);
+        playerLenght = PlayerPrefs.GetFloat(playerPrefsKey, data.lenght);
     }
 }

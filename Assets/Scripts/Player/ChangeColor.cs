@@ -43,7 +43,7 @@ public class ChangeColor : MonoBehaviour
     private void GetPlayerColorsValues(string playerPrefsKey) // La clave con la que guardé los colores es el parámetro a recibir 
     {
         float colorValue = PlayerPrefs.GetFloat(playerPrefsKey, 0);
-        Color randomColor = Color.Lerp(data.colorSince, data.colorTo, colorValue);
+        Color randomColor = Color.Lerp(data.colorFor, data.colorTo, colorValue);
         spriteRenderer.color = randomColor;
     }
 }

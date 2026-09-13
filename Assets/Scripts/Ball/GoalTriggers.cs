@@ -14,11 +14,6 @@ public class GoalTriggers : MonoBehaviour
         rbBall = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        //Debug.Log(GameManager.Instance.GetTimerGoalValue());
-    }
-
     // Deteccion de la zona de gol de los jugadores
     private void OnTriggerEnter2D(Collider2D collider)
     {

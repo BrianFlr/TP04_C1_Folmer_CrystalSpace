@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         // Cargo los el valor default de velocidad del jugador
-        currentSpeed = data.Speed;
+        currentSpeed = data.speed;
 
         // Dependiendo la ID de player, carga la velocidad mediante la clave correspondiente con la que esta fue guardada
         if (playerId == PlayerId.Player1)
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     // Función para obtener los valores de velocidad seteados en settings y asignárselo a la velocidad con la que se va a mover el sprite
     private void GetPlayerSpeedValue(string playerPrefsKey) // La clave con la que guardé la velocidad es el parámetro a recibir 
     {
-        currentSpeed = PlayerPrefs.GetFloat(playerPrefsKey, data.Speed);
+        currentSpeed = PlayerPrefs.GetFloat(playerPrefsKey, data.speed);
     }
 
 }

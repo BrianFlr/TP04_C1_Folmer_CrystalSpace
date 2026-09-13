@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8881118508573584498}
   - component: {fileID: 3442382919436680885}
   - component: {fileID: 3372976158425514278}
+  - component: {fileID: 6276638143940034749}
   - component: {fileID: 9222472668606908379}
   - component: {fileID: 6068487212458371814}
   m_Layer: 8
@@ -141,6 +142,19 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
   playerId: 0
   color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &6276638143940034749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933404534162627957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec06932d95f63e4b9feb411d214dd6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionColor
+  ball: {fileID: 0}
 --- !u!61 &9222472668606908379
 BoxCollider2D:
   m_ObjectHideFlags: 0

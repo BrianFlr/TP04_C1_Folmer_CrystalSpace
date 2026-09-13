@@ -11,4 +11,7 @@ public class GameplayDataSo : ScriptableObject
    
     [Header("Limit Time Goal")]
     [Range(5, 40)] public int maxTimeGoal = 20;
+
+
+    //roundsToWin = maxRounds / 2 + 0.5f
 }
