@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public partial class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
@@ -14,7 +14,10 @@ public class GameManager : MonoBehaviour
     private int player1Points = 0;
     private int player2Points = 0;
 
-    private bool Goal = false;
+    private bool goal = false;
+
+    // Creo mi variable tipo enum para asignarle el estado de victoria
+    private WinTieCondition winTieCondition = WinTieCondition.None;
 
     private void Awake()
     {
@@ -43,19 +46,31 @@ public class GameManager : MonoBehaviour
         // Contador regresivo de segundos maximos para anotar 
         timerGoal -= Time.deltaTime;
 
-        if (player1Points == roundsToWin && player2Points == roundsToWin)
+        // Condicion de victoria o empate
+        if (player1Points == roundsToWin)
         {
-
-        } 
+            winTieCondition = WinTieCondition.Player1Win;
+        }
+        else if (player2Points == roundsToWin)
+        {
+            winTieCondition = WinTieCondition.Player2Win;
+        }
+        else if (maxRounds % 2 == 0) // Significa que el numero de rondas es par y por lo tanto puede haber empate
+        {
+            if(player1Points == player2Points && player1Points == maxRounds / 2)
+            {
+                winTieCondition = WinTieCondition.Tie;
+            }
+        }
     }
 
     // Setters para sumarle puntaje a cada jugador
     public void SetPlayer1WinPoints()
     {
         // Aseguro que sume solo un punto
-        Goal = true;
-        
-        if (Goal)
+        goal = true;
+
+        if (goal)
         {
             player1Points++;
         }
@@ -63,9 +78,9 @@ public class GameManager : MonoBehaviour
 
     public void SetPlayer2WinPoints()
     {
-        Goal = true;
+        goal = true;
 
-        if (Goal)
+        if (goal)
         {
             player2Points++;
         }
@@ -92,13 +107,13 @@ public class GameManager : MonoBehaviour
     // Get para saber cuando se anota un punto
     public bool GetGoalState()
     {
-        return Goal;
+        return goal;
     }
 
     // Reset del valor de la variable que me indica cuando se suma un punto
     public void ResetGoalState()
     {
-        Goal = false;
+        goal = false;
     }
 
     // Get de los puntos de cada jugador
@@ -110,5 +125,10 @@ public class GameManager : MonoBehaviour
     public int GetPlayer2Points()
     {
         return player2Points;
+    }
+
+    public WinTieCondition GetWinTieCondition()
+    {
+        return winTieCondition;
     }
 }

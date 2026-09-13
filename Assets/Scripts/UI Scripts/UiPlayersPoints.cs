@@ -8,9 +8,6 @@ public class UiPlayersPoints : MonoBehaviour
     [SerializeField] private TMP_Text textPlayer1Points;
     [SerializeField] private TMP_Text textPlayer2Points;
 
-    [Header("Canvas WinTie Text")]
-    [SerializeField] private TMP_Text textWinTie;
-
     void Update()
     {
         // Muestro la cuenta regresiva y los puntos de cada jugador en el panel de puntos
