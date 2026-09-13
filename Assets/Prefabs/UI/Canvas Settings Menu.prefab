@@ -4460,10 +4460,10 @@ GameObject:
   - component: {fileID: 5799287849045764490}
   - component: {fileID: 5096180917066584080}
   - component: {fileID: 1242607823396506223}
-  - component: {fileID: 5257344568310295343}
   - component: {fileID: 2458813256638102399}
   - component: {fileID: 7086105217416351141}
   - component: {fileID: 2039878694006861480}
+  - component: {fileID: 5257344568310295343}
   m_Layer: 5
   m_Name: Canvas Settings Menu
   m_TagString: Untagged
@@ -4554,21 +4554,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5257344568310295343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5758160564683481350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5473515694ee13f4cacd5f58badca6f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UiButtonBack
-  activeCanvas: {fileID: 1769949822816264366}
-  returnCanvas: {fileID: 0}
-  btnBack: {fileID: 8259269853362924261}
 --- !u!114 &2458813256638102399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4617,6 +4602,21 @@ MonoBehaviour:
   sliderPlayer2Color: {fileID: 7581533347778111433}
   textPlayer1Color: {fileID: 2371172103900488314}
   textPlayer2Color: {fileID: 5296784724307053041}
+--- !u!114 &5257344568310295343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758160564683481350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5473515694ee13f4cacd5f58badca6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiButtonBack
+  activeCanvas: {fileID: 1769949822816264366}
+  returnCanvas: {fileID: 0}
+  btnBack: {fileID: 8259269853362924261}
 --- !u!1 &5958462160089432328
 GameObject:
   m_ObjectHideFlags: 0

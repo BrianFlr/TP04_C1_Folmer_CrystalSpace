@@ -1,11 +1,15 @@
 using TMPro;
 using UnityEngine;
 
-public class UiPointsPanel : MonoBehaviour
+public class UiPlayersPoints : MonoBehaviour
 {
+    [Header("Canvas Players Points Text")]
     [SerializeField] private TMP_Text textTimer;
     [SerializeField] private TMP_Text textPlayer1Points;
     [SerializeField] private TMP_Text textPlayer2Points;
+
+    [Header("Canvas WinTie Text")]
+    [SerializeField] private TMP_Text textWinTie;
 
     void Update()
     {
