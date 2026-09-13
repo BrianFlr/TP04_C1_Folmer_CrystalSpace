@@ -44,8 +44,7 @@ public class GoalTriggers : MonoBehaviour
                 GameManager.Instance.SetPlayer2WinPoints();
                 GameManager.Instance.ResetTimerGoal();
             }
-
-            if (collision == rightGoalTrigger)
+            else if (collision == rightGoalTrigger)
             {
                 GameManager.Instance.SetPlayer1WinPoints();
                 GameManager.Instance.ResetTimerGoal();

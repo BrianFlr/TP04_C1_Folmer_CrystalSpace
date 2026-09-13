@@ -5,9 +5,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private GameplayDataSo data;
-    private int roundsToWin = 3;
-    private int maxRounds = 5;
-    private float maxTimeGoal = 20f;
+
+    private int maxRounds = 0;
+    private int roundsToWin = 0;
+    private float maxTimeGoal = 0f;
     private float timerGoal = 0f;
 
     private int player1Points = 0;
@@ -26,19 +27,23 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-        roundsToWin = data.roundsToWin;
+    private void Start()
+    {
         maxRounds = data.maxRounds;
-        maxTimeGoal = (float)data.maxTimeGoal;
-        timerGoal = (float)data.maxTimeGoal;
+        roundsToWin = data.maxRounds / 2 + 1; // Calculo los rounds necesarios para ganar
+
+        maxTimeGoal = data.maxTimeGoal;
+        timerGoal = data.maxTimeGoal;
     }
 
     private void Update()
     {
-        // Contador de segundos hacia atras para anotar 
+        // Contador regresivo de segundos maximos para anotar 
         timerGoal -= Time.deltaTime;
 
-        if (player1Points == roundsToWin || player2Points == roundsToWin)
+        if (player1Points == roundsToWin && player2Points == roundsToWin)
         {
 
         } 
@@ -66,6 +71,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Get para saber el tiempo maximo para anotar un punto
+    public float GetMaxTimeGoal()
+    {
+        return maxTimeGoal;
+    }
+
     // Get para saber el tiempo hacia atras transcurrido
     public float GetTimerGoalValue()
     {
@@ -76,12 +87,6 @@ public class GameManager : MonoBehaviour
     public void ResetTimerGoal()
     {
         timerGoal = maxTimeGoal;
-    }
-
-    // Get para saber el tiempo maximo para anotar un punto
-    public float GetMaxTimeGoal()
-    {
-        return maxTimeGoal;
     }
 
     // Get para saber cuando se anota un punto

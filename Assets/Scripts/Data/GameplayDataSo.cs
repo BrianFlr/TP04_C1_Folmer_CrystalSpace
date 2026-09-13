@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class GameplayDataSo : ScriptableObject
 {
-    [HideInInspector] public int roundsToWin = 3;
-
     [Header("Rounds Quantity")]
-    [Range(3, 15)] public int maxRounds = 5;
+    [Range(1, 20)] public int maxRounds = 5;
    
     [Header("Limit Time Goal")]
-    [Range(5, 40)] public int maxTimeGoal = 20;
-
-
-    //roundsToWin = maxRounds / 2 + 0.5f
+    [Range(5, 50)] public int maxTimeGoal = 20;
 }

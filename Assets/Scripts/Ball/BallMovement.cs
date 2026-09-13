@@ -5,8 +5,8 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private float ballSpeed = 5f;
     [SerializeField] private float ballMaxSpeed = 25f;
     [SerializeField] private float bosterSpeed = 0.1f;
-    private float initialAngleX = 1f;
-    private float initialAngleY = 0.4f;
+    //private float initialAngleX = 1f;
+    //private float initialAngleY = 0.4f;
     private float timerBoostSpeed = 0f;
     private float timeBoostSpeed = 2f;
 
@@ -28,13 +28,12 @@ public class BallMovement : MonoBehaviour
         if (randomValue == 0)
         {
             // Empujo la pelota hacia la derecha
-            rbBall.linearVelocity = new Vector2(initialAngleX, initialAngleY).normalized * ballSpeed;
+            rbBall.AddForce(Vector3.right * ballSpeed, ForceMode2D.Impulse);
         }
         else
         {
             // Empujo la pelota hacia la izquierda
-            rbBall.linearVelocity = new Vector2(-initialAngleX, -initialAngleY).normalized * ballSpeed;
-            //rbBall.AddForce(rbBall.linearVelocity);
+            rbBall.AddForce(Vector3.left * ballSpeed, ForceMode2D.Impulse);
         }
     }
 

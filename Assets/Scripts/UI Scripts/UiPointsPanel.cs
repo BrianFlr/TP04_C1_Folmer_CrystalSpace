@@ -7,9 +7,9 @@ public class UiPointsPanel : MonoBehaviour
     [SerializeField] private TMP_Text textPlayer1Points;
     [SerializeField] private TMP_Text textPlayer2Points;
 
-    // Update is called once per frame
     void Update()
     {
+        // Muestro la cuenta regresiva y los puntos de cada jugador en el panel de puntos
         textTimer.text = GameManager.Instance.GetTimerGoalValue().ToString("0");
         textPlayer1Points.text = GameManager.Instance.GetPlayer1Points().ToString("0");
         textPlayer2Points.text = GameManager.Instance.GetPlayer2Points().ToString("0");
