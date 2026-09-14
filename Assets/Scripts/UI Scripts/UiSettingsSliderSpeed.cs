@@ -41,6 +41,6 @@ public class UiSettingsSliderSpeed : MonoBehaviour
         PlayerPrefs.Save();
 
         // Muestro el valor en el texto al lado del slider
-        textPlayerSpeed.text = value.ToString("F2");
+        textPlayerSpeed.text = value.ToString("F1");
     }
 }

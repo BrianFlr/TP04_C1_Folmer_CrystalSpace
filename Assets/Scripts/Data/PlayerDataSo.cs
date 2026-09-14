@@ -14,7 +14,7 @@ public class PlayerDataSo : ScriptableObject
     [Range(1, 10)] public float moveSpeed = 5f;
 
     [Header("Lenght")]
-    [Range(2, 8)] public float lenght = 2f;
+    [Range(2, 8)] public float lenght = 4f;
     [HideInInspector] public float width = 4f;
 
     [Header("Color")]

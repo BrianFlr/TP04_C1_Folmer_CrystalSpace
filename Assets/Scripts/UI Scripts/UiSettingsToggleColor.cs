@@ -1,7 +1,5 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class UiSettingsToggleColor : MonoBehaviour
 {
@@ -70,23 +68,4 @@ public class UiSettingsToggleColor : MonoBehaviour
             data.color = Color.blue;
         }
     }
-
-        /*// asigno el valor del color dependiendo del toggle marcado
-        if (redToggle.isOn)
-        {
-            data.color = Color.red;
-        }
-        else if (greenToggle.isOn)
-        {
-            data.color = Color.green;
-        }
-        else if (blueToggle.isOn)
-        {
-            data.color = Color.blue;
-        }
-        else
-        {
-            data.color = Color.white;
-        }
-    }*/
 }
