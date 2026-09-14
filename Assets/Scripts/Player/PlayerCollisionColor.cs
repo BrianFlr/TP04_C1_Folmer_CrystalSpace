@@ -6,12 +6,10 @@ public class PlayerCollisionColor : MonoBehaviour
     private Color initialColor = Color.white;
     private Color collisionBallColor = Color.white;
 
-    private Rigidbody2D rbPlayer;
     private SpriteRenderer srPlayer;
 
     private void Awake()
     {
-        rbPlayer = GetComponent<Rigidbody2D>();
         srPlayer = GetComponent<SpriteRenderer>();
     }
 

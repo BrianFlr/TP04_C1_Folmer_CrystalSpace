@@ -7,13 +7,6 @@ public class GoalTriggers : MonoBehaviour
     [SerializeField] private Collider2D leftGoalTrigger;
     [SerializeField] private Collider2D rightGoalTrigger;
 
-    private Rigidbody2D rbBall;
-
-    private void Awake()
-    {
-        rbBall = GetComponent<Rigidbody2D>();
-    }
-
     // Deteccion de la zona de gol de los jugadores
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -51,6 +44,4 @@ public class GoalTriggers : MonoBehaviour
             }
         }
     }
-
-
 }

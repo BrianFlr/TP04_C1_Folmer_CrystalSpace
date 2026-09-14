@@ -5,8 +5,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private float ballSpeed = 5f;
     [SerializeField] private float ballMaxSpeed = 25f;
     [SerializeField] private float bosterSpeed = 0.1f;
-    //private float initialAngleX = 1f;
-    //private float initialAngleY = 0.4f;
+
     private float timerBoostSpeed = 0f;
     private float timeBoostSpeed = 2f;
 
