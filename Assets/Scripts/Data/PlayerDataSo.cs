@@ -11,7 +11,7 @@ public class PlayerDataSo : ScriptableObject
     public KeyCode moveDown = KeyCode.S;
     public KeyCode moveRight = KeyCode.D;
     public KeyCode moveLeft = KeyCode.A;
-    [Range(0, 15)] public float moveSpeed = 5f;
+    [Range(1, 10)] public float moveSpeed = 5f;
 
     [Header("Lenght")]
     [Range(2, 8)] public float lenght = 4f;

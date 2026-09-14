@@ -115,9 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5473515694ee13f4cacd5f58badca6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditsMenu
-  creditsCanvas: {fileID: 8606125276524511585}
-  mainMenuCanvas: {fileID: 0}
-  pauseCanvas: {fileID: 0}
+  activeCanvas: {fileID: 8606125276524511585}
+  returnCanvas: {fileID: 0}
   btnBack: {fileID: 3594298974170356200}
 --- !u!1 &747464105769073307
 GameObject:

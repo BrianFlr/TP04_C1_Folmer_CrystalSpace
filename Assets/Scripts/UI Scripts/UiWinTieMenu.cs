@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static GameManager;
 
@@ -13,9 +14,11 @@ public class UiWinTieMenu : MonoBehaviour
 
     [Header("Retry Button")]
     [SerializeField] private Button btnRetry;
+    [SerializeField] private Button btnExit;
 
     private void Awake()
     {
+        btnExit.onClick.AddListener(OnExitClicked);
         btnRetry.onClick.AddListener(OnRetryClicked);
     }
 
@@ -53,6 +56,7 @@ public class UiWinTieMenu : MonoBehaviour
 
     private void OnDestroy()
     {
+        btnExit.onClick.RemoveAllListeners();
         btnRetry.onClick.RemoveAllListeners();
     }
 
@@ -68,4 +72,15 @@ public class UiWinTieMenu : MonoBehaviour
         // Desactivo el panel de WinTie
         canvasWinTie.SetActive(false);
     }
+
+    private void OnExitClicked()
+    {
+        // Reanudo el tiempo del juego
+        Time.timeScale = 1;
+
+        // Cargo la escena "MainMenu"
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
 }

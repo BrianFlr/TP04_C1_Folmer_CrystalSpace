@@ -38,6 +38,7 @@ public class UiSettingsToggleColor : MonoBehaviour
 
         // Guardo ese valor del slider y en la clave 
         PlayerPrefs.SetFloat(key, value);
+        PlayerPrefs.Save();
 
         // Muestro el valor en el texto al lado del slider
         textPlayerColor.text = value.ToString("F0");

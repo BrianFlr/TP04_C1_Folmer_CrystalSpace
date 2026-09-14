@@ -36,8 +36,9 @@ public class UiSettingsSliderSpeed : MonoBehaviour
         // Declaro una variable para definir el nombre con el que se va a guardar ese valor en configuracion
         string key = "Speed" + data.playerName;
 
-        // Guardo ese valor del slider en la clave 
+        // Guardo ese valor del slider en la clave
         PlayerPrefs.SetFloat(key, value);
+        PlayerPrefs.Save();
 
         // Muestro el valor en el texto al lado del slider
         textPlayerSpeed.text = value.ToString("F0");

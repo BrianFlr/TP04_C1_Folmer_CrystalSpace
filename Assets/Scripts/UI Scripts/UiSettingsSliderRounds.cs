@@ -38,6 +38,7 @@ public class UiSettingsSliderRounds : MonoBehaviour
 
         // Guardo ese valor del slider en la clave 
         PlayerPrefs.SetInt(key, (int)value);
+        PlayerPrefs.Save();
 
         // Muestro el valor en el texto al lado del slider
         textRounds.text = value.ToString("F0");

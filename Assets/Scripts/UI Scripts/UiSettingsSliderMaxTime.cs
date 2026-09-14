@@ -38,6 +38,7 @@ public class UiSettingsSliderMaxTime : MonoBehaviour
 
         // Guardo ese valor del slider en la clave 
         PlayerPrefs.SetInt(key, (int)value);
+        PlayerPrefs.Save();
 
         // Muestro el valor en el texto al lado del slider
         textMaxTime.text = value.ToString("F0");
