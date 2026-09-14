@@ -4,7 +4,7 @@ public class PlayerChangeLenght : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
 
-    [SerializeField] private float playerLenght = 0f;
+    private float playerLenght = 0f;
 
     private Rigidbody2D rb;
 
