@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a86dd63ce87448205e79fa9c17c4, type: 3}
   m_Name: GameplayData
   m_EditorClassIdentifier: Assembly-CSharp::GameplayDataSo
-  roundsToWin: 3
-  maxRounds: 5
-  maxTimeGoal: 20
+  maxRounds: 10
+  maxTimeGoal: 29

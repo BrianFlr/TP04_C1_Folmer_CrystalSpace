@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerDataSo : ScriptableObject
 {
+    public string playerName = "PlayerXX";
+
     [Header("Movement")]
     public KeyCode moveUp = KeyCode.W;
     public KeyCode moveDown = KeyCode.S;
     public KeyCode moveRight = KeyCode.D;
     public KeyCode moveLeft = KeyCode.A;
-    [Range(0, 15)] public float speed = 5.0f;
+    [Range(0, 15)] public float moveSpeed = 5f;
 
-    [Header("Lenght - Anchor")]
-    [Range(1, 10)] public float lenght = 5.0f;
-    [Range(1, 7)] public float anchor = 4.0f;
+    [Header("Lenght")]
+    [Range(2, 8)] public float lenght = 4f;
+    [HideInInspector] public float width = 4f;
 
     [Header("Color")]
     public Color color = Color.white;
-    public Color colorFor = Color.green;
-    public Color colorTo = Color.green;
 }

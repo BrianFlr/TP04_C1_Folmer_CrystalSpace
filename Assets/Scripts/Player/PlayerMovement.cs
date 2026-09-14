@@ -2,19 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Creo un enum para diferenciar jugadores desde el editor
-    enum PlayerId
-    {
-        Player1 = 0,
-        Player2 = 1
-    }
-
     [SerializeField] private PlayerDataSo data;
 
-    [Header("Player ID")]
-    [SerializeField] private PlayerId playerId;
-    
-    [SerializeField] public float currentSpeed = 5f;
+    private float currentSpeed = 0f;
 
     private Rigidbody2D rb;
 
@@ -25,25 +15,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        // Cargo los el valor default de velocidad del jugador
-        currentSpeed = data.speed;
-
-        // Dependiendo la ID de player, carga la velocidad mediante la clave correspondiente con la que esta fue guardada
-        if (playerId == PlayerId.Player1)
-        {
-            GetPlayerSpeedValue("Player1Speed");
-        }
-        else
-        {
-            GetPlayerSpeedValue("Player2Speed");
-        }
+        // Cargo el valor default de velocidad del jugador
+        currentSpeed = data.moveSpeed;
     }
 
     private void FixedUpdate()
     {
+        // Declaro variable vector igualado a 0 para frenar al jugador
         Vector2 direction = Vector2.zero;
 
-        // Movimiento del jugador
+        // Dependiendo la tecla que presiono se modifica el vector de direccion
         if (Input.GetKey(data.moveUp))
         {
             direction += new Vector2(0, 1);
@@ -64,13 +45,7 @@ public class PlayerMovement : MonoBehaviour
             direction += new Vector2(-1, 0);
         }
         
+        // Finalmente a la direccion le multiplico la velocidad para aplicar el movimiento
         rb.linearVelocity = direction.normalized * currentSpeed;
     }
-
-    // Función para obtener los valores de velocidad seteados en settings y asignárselo a la velocidad con la que se va a mover el sprite
-    private void GetPlayerSpeedValue(string playerPrefsKey) // La clave con la que guardé la velocidad es el parámetro a recibir 
-    {
-        currentSpeed = PlayerPrefs.GetFloat(playerPrefsKey, data.speed);
-    }
-
 }

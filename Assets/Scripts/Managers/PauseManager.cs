@@ -29,7 +29,7 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) // Leo el input de la tecla para pausa
         {
-            if (settingsCanvas.activeSelf || creditsCanvas.activeSelf) // Si esta activo otro menu 
+            if (settingsCanvas != null || creditsCanvas != null) // Si esta activo otro menu 
             {
                 // Primero lo cierra
                 settingsCanvas.SetActive(false);
