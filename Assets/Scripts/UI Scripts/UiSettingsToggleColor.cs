@@ -1,46 +1,92 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class UiSettingsToggleColor : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
 
-    private Slider sliderPlayerColor;
-
-    [Header("Text Speed")]
-    [SerializeField] private TMP_Text textPlayerColor;
+    [SerializeField] private Toggle redToggle;
+    [SerializeField] private Toggle greenToggle;
+    [SerializeField] private Toggle blueToggle;
 
     private void Awake()
     {
-        sliderPlayerColor = GetComponent<Slider>();
-        sliderPlayerColor.onValueChanged.AddListener(OnPlayerColorChanged);
+        redToggle.onValueChanged.AddListener(OnColorRedChecked);
+        greenToggle.onValueChanged.AddListener(OnColorGreenChecked);
+        blueToggle.onValueChanged.AddListener(OnColorBlueChecked);
     }
 
     private void Start()
     {
-        sliderPlayerColor.value = data.moveSpeed;
+        // Dependiendo del color guardado en el sriptable object dejo marcado el toggle correspondiente
+        if (data.color == Color.red)
+        {
+            redToggle.isOn = true;
+        }
+        else if (data.color == Color.green)
+        {
+            greenToggle.isOn = true;
+        }
+        else if (data.color == Color.blue)
+        {
+            blueToggle.isOn = true;
+        }
+        else
+        {
+            redToggle.isOn = false;
+            greenToggle.isOn = false;
+            blueToggle.isOn = false;
+        }
     }
 
     private void OnDestroy()
     {
-        sliderPlayerColor.onValueChanged.RemoveAllListeners();
+        redToggle.onValueChanged.RemoveAllListeners();
+        greenToggle.onValueChanged.RemoveAllListeners();
+        blueToggle.onValueChanged.RemoveAllListeners();
     }
 
-    // Evento de slider
-    private void OnPlayerColorChanged(float value)
+    // Funciones para cambiar el color en el scriptable object
+    private void OnColorRedChecked(bool isActive)
     {
-        // Le asigno el valor del slider al valor de inicializacion del sriptable object
-        data.moveSpeed = value;
-
-        // Declaro una variable para definir el nombre con el que se va a guardar ese valor en configuracion
-        string key = "Color" + data.playerName;
-
-        // Guardo ese valor del slider y en la clave 
-        PlayerPrefs.SetFloat(key, value);
-        PlayerPrefs.Save();
-
-        // Muestro el valor en el texto al lado del slider
-        textPlayerColor.text = value.ToString("F0");
+        if (isActive)
+        {
+            data.color = Color.red;
+        }
     }
+    private void OnColorGreenChecked(bool isActive)
+    {
+        if (isActive)
+        {
+            data.color = Color.green;
+        }
+    }
+    private void OnColorBlueChecked(bool isActive)
+    {
+        if (isActive)
+        {
+            data.color = Color.blue;
+        }
+    }
+
+        /*// asigno el valor del color dependiendo del toggle marcado
+        if (redToggle.isOn)
+        {
+            data.color = Color.red;
+        }
+        else if (greenToggle.isOn)
+        {
+            data.color = Color.green;
+        }
+        else if (blueToggle.isOn)
+        {
+            data.color = Color.blue;
+        }
+        else
+        {
+            data.color = Color.white;
+        }
+    }*/
 }

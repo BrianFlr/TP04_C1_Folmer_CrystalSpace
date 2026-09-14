@@ -41,6 +41,6 @@ public class UiSettingsSliderLenght : MonoBehaviour
         PlayerPrefs.Save();
 
         // Muestro el valor en el texto al lado del slider
-        textPlayerLenght.text = value.ToString("F0");
+        textPlayerLenght.text = value.ToString("F2");
     }
 }

@@ -24,7 +24,7 @@ public class UiWinTieMenu : MonoBehaviour
 
     private void Update()
     {
-        // Si la variable enum indica condicion de victoria y a su
+        // Si la variable enum indica una condicion de victoria
         if (GameManager.Instance.GetWinTieCondition() != WinTieCondition.None)
         {
             // Detengo el juego
@@ -71,16 +71,23 @@ public class UiWinTieMenu : MonoBehaviour
 
         // Desactivo el panel de WinTie
         canvasWinTie.SetActive(false);
+
+        // Vuelvo a correr el contador de tiempo del limite para anotar
+        GameManager.Instance.ResetTimerOffState();
     }
 
     private void OnExitClicked()
     {
+        // Reseteo los puntos de los jugadores
+        GameManager.Instance.ResetPlayersPoints();
+
         // Reanudo el tiempo del juego
         Time.timeScale = 1;
+
+        // Desactivo el panel de WinTie
+        canvasWinTie.SetActive(false);
 
         // Cargo la escena "MainMenu"
         SceneManager.LoadScene("MainMenu");
     }
-
-
 }

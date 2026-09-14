@@ -68,6 +68,7 @@ public class BallMovement : MonoBehaviour
 
     private void ClampDirection()
     {
+        // Aseguro que la pelota nunca quede rebotando de forma recta
         Vector2 direction = rbBall.linearVelocity;
 
         if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * ratioY)

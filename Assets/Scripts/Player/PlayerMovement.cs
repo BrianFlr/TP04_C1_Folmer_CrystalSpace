@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    private void Update()
     {
         // Cargo el valor default de velocidad del jugador
         currentSpeed = data.moveSpeed;

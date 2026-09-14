@@ -4,15 +4,13 @@ public class PlayerChangeColor : MonoBehaviour
 {
     [SerializeField] private PlayerDataSo data;
 
-    [SerializeField] private Color color = Color.white;
-    private Color newColor = Color.red;
-
-    private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+
+    private float timerColor = 0f;
+    private float timeToChangeColor = 3f;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -22,11 +20,18 @@ public class PlayerChangeColor : MonoBehaviour
         spriteRenderer.color = data.color;
     }
 
-    //Función para obtener los valores de colores seteados en settings y asignárselo al sprite
-    private void GetPlayerColorsValues(string playerPrefsKey) // La clave con la que guardé los colores es el parámetro a recibir 
+    private void Update()
     {
-        float colorValue = PlayerPrefs.GetFloat(playerPrefsKey, 0);
-        //Color randomColor = Color.Lerp(data.colorFor, data.colorTo, colorValue);
-        //spriteRenderer.color = randomColor;
+        // Registro el tiempo transcurrido
+        timerColor += Time.deltaTime;
+
+        // Vuelvo al color definido en la configuracion cada x segundos
+        if (timerColor >= timeToChangeColor)
+        {
+            spriteRenderer.color = data.color;
+
+            // Reseteo el contador
+            timerColor -= timeToChangeColor;
+        }
     }
 }

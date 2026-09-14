@@ -32,13 +32,9 @@ public class UiPauseMenu : MonoBehaviour
         {
             if (settingsCanvas.activeSelf || creditsCanvas.activeSelf) // Si esta activo otro menu 
             {
-                // Primero lo cierra
+                // Primero cierra ese menu para volver al de pausa
                 settingsCanvas.SetActive(false);
                 creditsCanvas.SetActive(false);
-
-                // Y vuelve al menu de pausa
-                pauseCanvas.SetActive(true);
-
             }
             else
             {
@@ -80,20 +76,17 @@ public class UiPauseMenu : MonoBehaviour
 
         // Desactivo el panel de pausa
         pauseCanvas.SetActive(false);
-
     }
 
     private void OnSettingsClicked()
     {
-        // Desactivo el panel de Pausa y activo el de Configuración
-        pauseCanvas.SetActive(false);
+        // Activo el panel de Configuracion
         settingsCanvas.SetActive(true);
     }
 
     private void OnCreditsClicked()
     {
-        // Desactivo el panel de Pausa y activo el de Créditos
-        pauseCanvas.SetActive(false);
+        // Activo el panel de Creditos
         creditsCanvas.SetActive(true);
     }
 

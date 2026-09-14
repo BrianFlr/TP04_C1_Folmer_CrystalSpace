@@ -35,19 +35,25 @@ public class UiMainMenu : MonoBehaviour
     // Eventos de botones
     private void OnStartClicked()
     {
+        // Vuelvo a correr el contador de tiempo del limite para anotar
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ResetTimerOffState();
+        }
+
         // Cargo la escena de juego
         SceneManager.LoadScene("Gameplay");
     }
 
     private void OnSettingsClicked()
     {
-        mainMenuCanvas.SetActive(false);
+        // Activo el canvas settings
         settingsCanvas.SetActive(true);
     }
 
     private void OnCreditsClicked()
     {
-        mainMenuCanvas.SetActive(false);
+        // Activo el canvas credits
         creditsCanvas.SetActive(true);
     }
 

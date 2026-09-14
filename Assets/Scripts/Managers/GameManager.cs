@@ -15,6 +15,7 @@ public partial class GameManager : MonoBehaviour
     private int player2Points = 0;
 
     private bool goal = false;
+    private bool isTimerOff = false;
 
     // Creo mi variable tipo enum para asignarle el estado de victoria o empate
     private WinTieCondition winTieCondition = WinTieCondition.None;
@@ -34,34 +35,47 @@ public partial class GameManager : MonoBehaviour
 
     private void Start()
     {
-        maxRounds = data.maxRounds;
-        roundsToWin = data.maxRounds / 2 + 1; // Calculo los rounds necesarios para ganar
-
-        maxTimeGoal = data.maxTimeGoal;
-        timerGoal = data.maxTimeGoal;
+        // Tomo los valores de inicio del juego
+        GetInitialVariables();
     }
 
     private void Update()
     {
-        // Contador regresivo de segundos maximos para anotar 
-        timerGoal -= Time.deltaTime;
+        if (!isTimerOff) // Si aun no se finalizo el juego, el contador sigue realizandose
+        {
+            // Contador regresivo de segundos maximos para anotar 
+            timerGoal -= Time.deltaTime;
+        }
 
         // Condicion de victoria o empate
         if (player1Points == roundsToWin)
         {
             winTieCondition = WinTieCondition.Player1Win;
+            isTimerOff = true;
         }
         else if (player2Points == roundsToWin)
         {
             winTieCondition = WinTieCondition.Player2Win;
+            isTimerOff = true;
         }
         else if (maxRounds % 2 == 0) // Significa que el numero de rondas es par y por lo tanto puede haber empate
         {
             if(player1Points == player2Points && player1Points == maxRounds / 2)
             {
                 winTieCondition = WinTieCondition.Tie;
+                isTimerOff = true;
             }
         }
+    }
+
+    // Get para volver a tomar las variables de inicio en caso de que sean modificadas a la mitad de un juego y al inicio
+    public void GetInitialVariables()
+    {
+        maxRounds = data.maxRounds;
+        roundsToWin = data.maxRounds / 2 + 1; // Calculo los rounds necesarios para ganar
+
+        maxTimeGoal = data.maxTimeGoal;
+        timerGoal = data.maxTimeGoal;
     }
 
     // Setters para sumarle puntaje a cada jugador
@@ -144,5 +158,11 @@ public partial class GameManager : MonoBehaviour
     public void ResetWinTieCondition()
     {
         winTieCondition = WinTieCondition.None;
+    }
+
+    // Reset de la variable para que el contador regresivo vuelva a correr
+    public void ResetTimerOffState()
+    {
+        isTimerOff = false;
     }
 }

@@ -1358,6 +1358,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 28646333}
     m_Modifications:
+    - target: {fileID: 2560154308804674807, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3372976158425514278, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: data
       value: 
@@ -4280,10 +4284,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538772778405724186, guid: 09661dcc93cb12b44bf20ee5577cb872, type: 3}
-      propertyPath: activeCanvas
-      value: 
-      objectReference: {fileID: 1415155754}
-    - target: {fileID: 7538772778405724186, guid: 09661dcc93cb12b44bf20ee5577cb872, type: 3}
       propertyPath: returnCanvas
       value: 
       objectReference: {fileID: 957368236}
@@ -5021,23 +5021,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 28646333}
     m_Modifications:
-    - target: {fileID: 2560154308804674807, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: m_FlipX
-      value: 0
+    - target: {fileID: 3442382919436680885, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2560154308804674807, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2560154308804674807, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2433939580935551280, guid: a62ce0f455549f047be3184ce5750644, type: 3}
     - target: {fileID: 6276638143940034749, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: ball
-      value: 
-      objectReference: {fileID: 1177905192}
-    - target: {fileID: 8241524656153186481, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: ball
       value: 
       objectReference: {fileID: 1177905192}
@@ -5084,14 +5072,6 @@ PrefabInstance:
     - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222472668606908379, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 9222472668606908379, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

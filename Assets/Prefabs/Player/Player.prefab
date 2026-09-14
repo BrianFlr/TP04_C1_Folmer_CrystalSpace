@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8933404534162627957}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.65157, y: 0.22334, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
@@ -87,12 +87,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2433939580935551280, guid: a62ce0f455549f047be3184ce5750644, type: 3}
+  m_Sprite: {fileID: 103544240673529175, guid: d6bc9f23d550f1a4a935ed0c14dcef13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.18, y: 0.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -137,7 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
   data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &6276638143940034749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +188,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.53}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.18, y: 0.56}
+    newSize: {x: 0.18, y: 0.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
