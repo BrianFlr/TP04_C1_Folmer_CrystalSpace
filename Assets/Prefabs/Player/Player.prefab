@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9174607399467305313}
-  - component: {fileID: 2560154308804674807}
   - component: {fileID: 8881118508573584498}
   - component: {fileID: 3442382919436680885}
   - component: {fileID: 3372976158425514278}
   - component: {fileID: 6276638143940034749}
+  - component: {fileID: 2560154308804674807}
   - component: {fileID: 9222472668606908379}
   - component: {fileID: 6068487212458371814}
   m_Layer: 8
@@ -32,12 +32,64 @@ Transform:
   m_GameObject: {fileID: 8933404534162627957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.65157, y: 0.22334, z: 0}
+  m_LocalPosition: {x: -4.5, y: 0.22334, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8881118508573584498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933404534162627957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a5ce6721106ec45b653c943c210732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
+--- !u!114 &3442382919436680885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933404534162627957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd369ca9b4e3d45439b6769e952126e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeLenght
+  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
+--- !u!114 &3372976158425514278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933404534162627957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e56a4372efe1294bb1ded474d2b9ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
+  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
+--- !u!114 &6276638143940034749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933404534162627957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128733d130ec3eb499755a6106431e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionColor
+  ball: {fileID: 0}
 --- !u!212 &2560154308804674807
 SpriteRenderer:
   serializedVersion: 2
@@ -97,58 +149,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &8881118508573584498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933404534162627957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a5ce6721106ec45b653c943c210732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
---- !u!114 &3442382919436680885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933404534162627957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd369ca9b4e3d45439b6769e952126e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeLenght
-  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
---- !u!114 &3372976158425514278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933404534162627957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e56a4372efe1294bb1ded474d2b9ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
-  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
---- !u!114 &6276638143940034749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8933404534162627957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 128733d130ec3eb499755a6106431e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionColor
-  ball: {fileID: 0}
 --- !u!61 &9222472668606908379
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,10 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private float ratioY = 4f;
     [SerializeField] private float ratioX = 0.2f;
 
+    private float mapLimitValueY = 5f;
+    private float resetPositionValueX = 4.5f;
+
+
     private Rigidbody2D rbBall;
 
     private void Awake()
@@ -54,6 +58,16 @@ public class BallMovement : MonoBehaviour
 
             ClampDirection();
         }
+
+        // Con esto me aseguro de que la pelota se mantenga dentro de la escena y no salga disparada si un jugador la presiona contra un muro
+        if (rbBall.position.y > mapLimitValueY)
+        {
+            rbBall.position = new Vector2 (rbBall.position.x, resetPositionValueX);
+        }
+        else if(rbBall.position.y < -mapLimitValueY)
+        {
+            rbBall.position = new Vector2(rbBall.position.x, -resetPositionValueX);
+        }
     }
 
     // Deteccion de colisión de la pelota
@@ -70,7 +84,7 @@ public class BallMovement : MonoBehaviour
         // Aseguro que la pelota nunca quede rebotando de forma recta
         Vector2 direction = rbBall.linearVelocity;
 
-        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * ratioY)
+        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * ratioY) // Tanto en la direccion de 
         {
             direction.x = Mathf.Sign(direction.x);
             direction.y = Mathf.Sign(direction.y) * ratioY;

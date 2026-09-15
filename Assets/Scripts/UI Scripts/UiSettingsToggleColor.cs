@@ -53,19 +53,33 @@ public class UiSettingsToggleColor : MonoBehaviour
         {
             data.color = Color.red;
         }
+        else
+        {
+            data.color = Color.white;
+        }
     }
+
     private void OnColorGreenChecked(bool isActive)
     {
         if (isActive)
         {
             data.color = Color.green;
         }
+        else
+        {
+            data.color = Color.white;
+        }
     }
+    
     private void OnColorBlueChecked(bool isActive)
     {
         if (isActive)
         {
             data.color = Color.blue;
+        }
+        else
+        {
+            data.color = Color.white;
         }
     }
 }

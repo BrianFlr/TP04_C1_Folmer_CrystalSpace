@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameplayData
   m_EditorClassIdentifier: Assembly-CSharp::GameplayDataSo
   maxRounds: 5
-  maxTimeGoal: 50
+  maxTimeGoal: 20

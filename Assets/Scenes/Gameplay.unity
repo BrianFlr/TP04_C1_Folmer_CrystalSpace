@@ -435,10 +435,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 96777907}
+  - component: {fileID: 96777908}
   - component: {fileID: 96777911}
   - component: {fileID: 96777910}
   - component: {fileID: 96777909}
-  - component: {fileID: 96777908}
   m_Layer: 5
   m_Name: Canvas Pause Menu
   m_TagString: Untagged
@@ -1396,11 +1396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.42
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1453,10 +1453,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424278927}
+  - component: {fileID: 424278929}
   - component: {fileID: 424278926}
   - component: {fileID: 424278925}
   - component: {fileID: 424278924}
-  - component: {fileID: 424278929}
   m_Layer: 5
   m_Name: 'Canvas WinTie Menu '
   m_TagString: Untagged
@@ -2265,7 +2265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8486379639340401415, guid: 5291421bb28c795459fa8cf975465fa7, type: 3}
       propertyPath: m_Color.a
-      value: 0.19607843
+      value: 0.13725491
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3109,9 +3109,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1177905194}
-  - component: {fileID: 1177905193}
   - component: {fileID: 1177905197}
   - component: {fileID: 1177905198}
+  - component: {fileID: 1177905193}
   - component: {fileID: 1177905195}
   - component: {fileID: 1177905196}
   m_Layer: 7
@@ -3275,6 +3275,8 @@ MonoBehaviour:
   bosterSpeed: 0.1
   ratioY: 4
   ratioX: 0.2
+  player1: {fileID: 1869850705}
+  player2: {fileID: 1268714559}
 --- !u!114 &1177905198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3384,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!50 &1268714559 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6068487212458371814, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
+  m_PrefabInstance: {fileID: 404916515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1344114338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,10 +3815,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547146619}
+  - component: {fileID: 1547146620}
   - component: {fileID: 1547146618}
   - component: {fileID: 1547146617}
   - component: {fileID: 1547146616}
-  - component: {fileID: 1547146620}
   m_Layer: 5
   m_Name: Canvas Players Points
   m_TagString: Untagged
@@ -4453,6 +4460,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
   m_PrefabInstance: {fileID: 8441984173293715103}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1869850705 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6068487212458371814, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
+  m_PrefabInstance: {fileID: 8441984173293715103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1885861247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436770163770805095, guid: 5291421bb28c795459fa8cf975465fa7, type: 3}
@@ -5034,12 +5046,8 @@ PrefabInstance:
       value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.65157
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9174607399467305313, guid: a1dfd493f8459cc4980cf5ecdfa7da32, type: 3}
       propertyPath: m_LocalPosition.z

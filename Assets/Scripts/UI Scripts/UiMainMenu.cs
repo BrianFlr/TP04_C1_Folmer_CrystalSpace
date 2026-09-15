@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -27,7 +26,7 @@ public class UiMainMenu : MonoBehaviour
     private void Start()
     {
 #if UNITY_WEBGL
-       btnExit.gameObject.SetActive(false)
+        btnExit.gameObject.SetActive(false);
 #endif
     }
 
