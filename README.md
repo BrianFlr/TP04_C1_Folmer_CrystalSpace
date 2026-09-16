@@ -82,15 +82,17 @@ Free Hologram Interface By Wenrexa
 
 
 FoundationsLogo by Roger Sperberg
+
 Intersect by Aenigma Fonts
+
 Rational Integer by Tepid Monkey
 
 # Español
 
 # Crystal Space
 
-
 Hola!
+
 Este es mi primer juego desarrollado en Unity. Está inspirado en el clásico juego **"Pong"**, pero ambientado en el espacio.
 
 
@@ -162,5 +164,7 @@ Free Hologram Interface por Wenrexa
 ***Fuentes:***
 
 FoundationsLogo por Roger Sperberg
+
 Intersect por Aenigma Fonts
+
 Rational Integer por Tepid Monkey
