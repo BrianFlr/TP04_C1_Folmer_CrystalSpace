@@ -45,6 +45,9 @@ The ***Settings*** menu allows players to customize the following attributes fro
 | **Left** | `A` | `Left Arrow` |
 | **Right** | `D` | `Right Arrow` |
 
+| Pause Game |
+| :--- |
+| `Escape` or `P` |
 ## Credits
 
 
