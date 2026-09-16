@@ -130,6 +130,10 @@ En el menú de ***Settings*** se permite modificar las siguientes característic
 | **Abajo** | `S` | `Flecha Abajo` |
 | **Izquierda** | `A` | `Flecha Izquierda` |
 | **Derecha** | `D` | `Flecha Derecha` |
+
+| Pausar Juego |
+| :--- |
+| `Escape` o `P` |
 ## Créditos
 
 
