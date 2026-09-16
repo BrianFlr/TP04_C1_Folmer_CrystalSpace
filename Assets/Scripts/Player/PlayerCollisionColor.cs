@@ -20,6 +20,7 @@ public class PlayerCollisionColor : MonoBehaviour
 
     private void Start()
     {
+        srPlayer.color = data.color;
         initialColor = data.color;
     }
 
