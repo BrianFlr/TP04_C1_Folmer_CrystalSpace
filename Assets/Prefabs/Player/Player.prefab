@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e56a4372efe1294bb1ded474d2b9ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
-  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
 --- !u!114 &6276638143940034749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128733d130ec3eb499755a6106431e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionColor
+  data: {fileID: 11400000, guid: 437aaaa760d338b4fa48796b448948db, type: 2}
   ball: {fileID: 0}
 --- !u!212 &2560154308804674807
 SpriteRenderer:

@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    [SerializeField] private float ballSpeed = 5f;
-    [SerializeField] private float ballMaxSpeed = 25f;
-    [SerializeField] private float bosterSpeed = 0.1f;
+    private float ballSpeed = 5f;
+    private float ballMaxSpeed = 25f;
+    private float bosterSpeed = 0.1f;
 
     private float timerBoostSpeed = 0f;
     private float timeBoostSpeed = 2f;
 
-    [SerializeField] private float ratioY = 4f;
-    [SerializeField] private float ratioX = 0.2f;
+    private float ratioY = 4f;
+    private float ratioX = 0.2f;
 
-    private float mapLimitValueY = 5f;
-    private float resetPositionValueX = 4.5f;
 
+    [SerializeField] Rigidbody2D player1;
+    [SerializeField] Rigidbody2D player2;
+    private float mapLimitPositionY = 4.9f;
+    private float resetBallPositionY = 4.8f;
 
     private Rigidbody2D rbBall;
 
@@ -60,13 +62,13 @@ public class BallMovement : MonoBehaviour
         }
 
         // Con esto me aseguro de que la pelota se mantenga dentro de la escena y no salga disparada si un jugador la presiona contra un muro
-        if (rbBall.position.y > mapLimitValueY)
+        if (rbBall.position.y > mapLimitPositionY)
         {
-            rbBall.position = new Vector2 (rbBall.position.x, resetPositionValueX);
+            rbBall.position = new Vector2(rbBall.position.x, resetBallPositionY);
         }
-        else if(rbBall.position.y < -mapLimitValueY)
+        else if (rbBall.position.y < -mapLimitPositionY)
         {
-            rbBall.position = new Vector2(rbBall.position.x, -resetPositionValueX);
+            rbBall.position = new Vector2(rbBall.position.x, -resetBallPositionY);
         }
     }
 
@@ -84,7 +86,7 @@ public class BallMovement : MonoBehaviour
         // Aseguro que la pelota nunca quede rebotando de forma recta
         Vector2 direction = rbBall.linearVelocity;
 
-        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * ratioY) // Tanto en la direccion de 
+        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * ratioY)
         {
             direction.x = Mathf.Sign(direction.x);
             direction.y = Mathf.Sign(direction.y) * ratioY;

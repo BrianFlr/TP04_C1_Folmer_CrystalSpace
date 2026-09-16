@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class PlayerCollisionColor : MonoBehaviour
 {
+    [SerializeField] private PlayerDataSo data;
+
     [SerializeField] private GameObject ball;
     private Color initialColor = Color.white;
-    private Color collisionBallColor = Color.white;
+    private Color actualColor = Color.white;
+
+    private float timerColor = 0f;
+    private float timeToChangeColor = 2f;
 
     private SpriteRenderer srPlayer;
 
@@ -15,7 +20,23 @@ public class PlayerCollisionColor : MonoBehaviour
 
     private void Start()
     {
-        initialColor = srPlayer.color;
+        initialColor = data.color;
+    }
+
+    private void Update()
+    {
+        // Si el sprite posee un color distinto al original, se resetea luego de x segundos
+        if (srPlayer.color != initialColor)
+        {
+            timerColor += Time.deltaTime;
+
+            if (timerColor >= timeToChangeColor)
+            {
+                srPlayer.color = initialColor;
+
+                timerColor = 0;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,8 +46,7 @@ public class PlayerCollisionColor : MonoBehaviour
             // Cambio de color de forma aleatoria
             srPlayer.color = new Color(Random.value, Random.value, Random.value);
 
-            // Guardo ese color actual en una variable
-            collisionBallColor = srPlayer.color;
+            actualColor = srPlayer.color;
         }
     }
 
@@ -40,14 +60,15 @@ public class PlayerCollisionColor : MonoBehaviour
     {
         if(collision.gameObject != ball)
         {
-            // Al dejar de colisionar con el muro actualiza el color al del principio de la partida o al random dado al colisionar con la pelota
-            if (initialColor != Color.white)
+            // Si al salir de la colision el sprite poseía un color distinto al original, muestra ese color
+            if(actualColor != initialColor)
             {
-                srPlayer.color = initialColor;
+                srPlayer.color = actualColor;
+                actualColor = initialColor;
             }
             else
             {
-                srPlayer.color = collisionBallColor;
+                srPlayer.color = initialColor;
             }
         }
     }
