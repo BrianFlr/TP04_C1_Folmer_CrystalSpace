@@ -1,5 +1,3 @@
-# English
-
 # Crystal Space
 
 Hello! 
@@ -90,9 +88,12 @@ Intersect by Aenigma Fonts
 
 Rational Integer by Tepid Monkey
 
-# Español
+## Links
+**itch.io:** https://snairx.itch.io/crystal-space
+**GitHub Repository:** https://github.com/BrianFlr/TP04_C1_Folmer_CrystalSpace
 
-# Crystal Space
+
+# Español
 
 Hola!
 
@@ -171,6 +172,10 @@ Free Hologram Interface por Wenrexa
 ***Fuentes:***
 
 FoundationsLogo por Roger Sperberg
+
+## Enlaces
+**itch.io:** https://snairx.itch.io/crystal-space
+**Repositorio GitHub:** https://github.com/BrianFlr/TP04_C1_Folmer_CrystalSpace
 
 Intersect por Aenigma Fonts
 
