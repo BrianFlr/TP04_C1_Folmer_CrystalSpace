@@ -9,6 +9,8 @@ public class GameSceneManager : MonoBehaviour
         if (GameManager.Instance.GetGoalState())
         {
             // Recargo la escena de juego
+            // Warning: "Gameplay" escrito a mano acá, y otra vez en UiMainMenu.cs:51, más "MainMenu" en UiPauseMenu.cs:99 y UiWinTieMenu.cs:91.
+            // Declaralos como const string en una clase compartida: si renombrás una escena, el proyecto compila igual y falla recién en runtime.
             SceneManager.LoadScene("Gameplay");
 
             // Reseteo el estado de gol

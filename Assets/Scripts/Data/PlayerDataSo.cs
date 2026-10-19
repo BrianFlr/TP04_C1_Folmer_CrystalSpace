@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDataSo : ScriptableObject
 {
+    // Warning: los ocho campos son public y los sliders y los toggles los escriben en runtime. En el editor eso queda grabado en el .asset entre sesiones, y en el build se pierde al cerrar.
+    // Dejalos [SerializeField] private con getters y un método Set por cada valor que la UI necesita cambiar. Vale lo mismo para los dos campos de GameplayDataSo.cs:8.
     public string playerName = "PlayerXX";
 
     [Header("Movement")]

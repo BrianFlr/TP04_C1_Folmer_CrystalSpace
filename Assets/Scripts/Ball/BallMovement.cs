@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
+    // Warning: los siete valores de la pelota (velocidad inicial, máxima, incremento, intervalo, ratios y límites de mapa) están hardcodeados acá, mientras que los del jugador y los de la partida sí viven en un ScriptableObject.
+    // La consigna pide los valores de inicialización en SO: armá un BallDataSo con estos siete campos y quedás consistente con el resto del proyecto.
     private float ballSpeed = 5f;
     private float ballMaxSpeed = 25f;
+    // Suggestion: bosterSpeed va con dos oes (boosterSpeed), y lenght va con la h antes de la t (length) en PlayerDataSo.cs:17, PlayerChangeLenght.cs y UiSettingsSliderLenght.cs.
+    // Son los mismos dos tipeos que te marqué en el TP03 y ya se propagaron al nombre de tres archivos y a los campos del inspector.
     private float bosterSpeed = 0.1f;
 
     private float timerBoostSpeed = 0f;

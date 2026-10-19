@@ -2,6 +2,8 @@ using UnityEngine;
 
 public partial class GameManager : MonoBehaviour
 {
+    // Warning: Instance es un campo public static, así que cualquier script puede pisarlo con null o con otro GameManager y romper todas las llamadas de GameManager.Instance.
+    // El patrón habitual es public static GameManager Instance { get; private set; }
     public static GameManager Instance;
 
     [SerializeField] private GameplayDataSo data;
@@ -48,6 +50,8 @@ public partial class GameManager : MonoBehaviour
         }
 
         // Condicion de victoria o empate
+        // Warning: la condición de victoria se evalúa en cada frame con ==, y como UiWinTieMenu.Update llama a ResetWinTieCondition() apenas la muestra, acá se vuelve a setear en el frame siguiente, una y otra vez, mientras el marcador siga igual.
+        // Usá >= en lugar de == (si algún día se suman dos puntos juntos, con == no entra nunca) y resolvé el fin de partida una sola vez, desde donde se suma el punto, en vez de chequearlo en el Update.
         if (player1Points == roundsToWin)
         {
             winTieCondition = WinTieCondition.Player1Win;
@@ -82,6 +86,8 @@ public partial class GameManager : MonoBehaviour
     public void SetPlayer1WinPoints()
     {
         // Aseguro que sume solo un punto
+        // Suggestion: goal se pone en true en la línea anterior y el if de abajo pregunta por esa misma variable, así que siempre entra. El comentario dice que es para asegurar que sume un solo punto, pero el if no hace eso.
+        // Dejá solo player1Points++ y goal = true. Lo mismo en SetPlayer2WinPoints.
         goal = true;
 
         if (goal)

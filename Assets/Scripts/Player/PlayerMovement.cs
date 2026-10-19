@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Cargo el valor default de velocidad del jugador
+        // Warning: currentSpeed se vuelve a copiar del ScriptableObject en cada frame para un valor que solo cambia cuando el jugador mueve el slider.
+        // Leelo en el Start y volvé a leerlo cuando se cierra el panel de settings. Si querés que se aplique en vivo, que el slider avise con un evento.
         currentSpeed = data.moveSpeed;
     }
 

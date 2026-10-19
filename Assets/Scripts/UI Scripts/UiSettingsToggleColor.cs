@@ -19,6 +19,8 @@ public class UiSettingsToggleColor : MonoBehaviour
     private void Start()
     {
         // Dependiendo del color guardado en el sriptable object dejo marcado el toggle correspondiente
+        // Warning: los tres Toggle no están en un ToggleGroup, así que se pueden marcar dos a la vez y el color final queda determinado por el orden en que se dispararon los eventos.
+        // Poné los tres en un ToggleGroup, o resolvelo con un solo Dropdown.
         if (data.color == Color.red)
         {
             redToggle.isOn = true;

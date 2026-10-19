@@ -28,6 +28,8 @@ public class UiSettingsSliderMaxTime : MonoBehaviour
     }
 
     // Evento de slider
+    // Suggestion: el método se llama OnRoundsChanged pero este slider configura el tiempo máximo, no las rondas. Quedó del copiar y pegar desde UiSettingsSliderRounds.
+    // Renombralo a OnMaxTimeChanged.
     private void OnRoundsChanged(float value)
     {
         // Le asigno el valor del slider al valor de inicializacion del sriptable object
